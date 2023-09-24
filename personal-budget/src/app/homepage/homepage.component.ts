@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Chart } from 'chart.js/auto';
 
+
 @Component({
   selector: 'pb-homepage',
   templateUrl: './homepage.component.html',

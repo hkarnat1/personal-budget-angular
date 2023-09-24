@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { P404Component } from './p404/p404.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { PieComponent } from './pie/pie.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ContactsComponent } from './contacts/contacts.component';
     P404Component,
     BreadcrumbsComponent,
     ContactsComponent,
+    PieComponent,
   ],
   imports: [
     BrowserModule,
