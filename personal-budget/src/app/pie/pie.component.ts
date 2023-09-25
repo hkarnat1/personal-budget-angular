@@ -35,6 +35,7 @@ export class PieComponent {
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
+    console.log('in the function')
     this.dataService.getChartData().subscribe((res: any) => {
       for (var i = 0; i < res.myBudget.length; i++) {
         this.data  = res.myBudget;
@@ -43,7 +44,6 @@ export class PieComponent {
       this.createSvg();
       this.createColors();
       this.drawChart();
-      // this.createChart();
     });
   }
 

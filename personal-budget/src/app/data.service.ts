@@ -1,29 +1,24 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { of, tap} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-//   public dataSource: any = {
-//     datasets: [
-//         {
-//             data: [],
-//             backgroundColor: [
-//                 '#ffcd56',
-//                 '#ff6384',
-//                 '#36a2eb',
-//                 '#fd6b19',
-//             ]
-//         }
-//     ],
-//     labels: []
-// };
-
+  private data: any
   constructor(private http: HttpClient) { }
   getChartData(){
-    return this.http.get('http://localhost:3000/budget');
+    if (this.data) {
+      return of(this.data)
+    }
+    return this.http.get('http://localhost:3000/budget').pipe(
+      tap(result=> {
+        this.data = result;
+      }),
+    );
+
   }
 
 }
